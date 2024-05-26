@@ -1,9 +1,7 @@
 ﻿using Kursova2023_2024.Classes.Data_classes;
 using Kursova2023_2024.Classes.Tool_classes;
 using Kursova2023_2024.Forms.Admin_forms;
-using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Kursova2023_2024.Forms.AdminForms
 {
