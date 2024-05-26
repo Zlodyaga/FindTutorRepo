@@ -235,3 +235,5 @@ Kursova2023-2024/obj/Debug/net8.0-windows8.0/Kursova2023-2024.AssemblyInfoInputs
 Kursova2023-2024/obj/Debug/net8.0-windows8.0/Kursova2023-2024.AssemblyInfoInputs.cache
 Kursova2023-2024/obj/Debug/net8.0-windows8.0/Kursova2023-2024.AssemblyInfoInputs.cache
 *.cache
+/Kursova2023-2024/obj/Debug/net8.0-windows8.0
+/.vs

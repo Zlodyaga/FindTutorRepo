@@ -70,7 +70,7 @@ namespace Kursova2023_2024.Forms.Teacher_forms
             {
                 IUser user = FindUserById(userWithVacancy.First);
                 Vacancy vacancy = FindVacancyById(userWithVacancy.Second);
-
+                if (vacancy == null) { showErrorMessage(); continue; };
                 // Создаем контейнер Panel для каждого объекта
                 Panel itemPanel = new Panel();
                 itemPanel.Size = new Size(900, 100);
@@ -144,6 +144,14 @@ namespace Kursova2023_2024.Forms.Teacher_forms
         v.Second == userWithVacancy.Second &&
         v.time == userWithVacancy.time);
 
+        private void showErrorMessage() {
+            Label usernameLabel = new Label();
+            ControlPropertiesClass.SetToDefaultHeaderLabelFont(usernameLabel, "Sorry, you don't have any responses from students");
+            usernameLabel.AutoSize = true;
+            usernameLabel.Location = new Point(230, 258); //430, 258
+            this.Controls.Add(usernameLabel);
+        }
+
         private void RefreshLists()
         {
             vacanciesAllWithStudents = DataBaseConnectionClass.GetAppliedAndRespondedVacanciesIdForTeacher();
@@ -156,11 +164,7 @@ namespace Kursova2023_2024.Forms.Teacher_forms
                 .ToList();
             if (users.Count == 0)
             {
-                Label usernameLabel = new Label();
-                ControlPropertiesClass.SetToDefaultHeaderLabelFont(usernameLabel, "Sorry, you don't have any responses from students");
-                usernameLabel.AutoSize = true;
-                usernameLabel.Location = new Point(230, 258); //430, 258
-                this.Controls.Add(usernameLabel);
+                showErrorMessage();
             }
         }
 
